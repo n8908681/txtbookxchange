@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isbn: 123456789123
+  title: eg2
+  author: ega2
+  bookstatus: true
+  user: michael
+
+two:
+  isbn: 124356789123
+  title: eg1
+  author: ega1
+  bookstatus: false
+  user: michael

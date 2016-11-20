@@ -1,0 +1,66 @@
+<% if logged_in? %>
+<%= image_tag("TEXTCHANGE.png", :class => "header_img") %>
+<div class="center jumbotron">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <% @books.each do |booka| %>
+      <% if booka.user_id == @user.id && booka.bookstatus == 'wanted' %>
+        <% @books.each do |bookb| %>
+          <% if bookb.bookstatus == 'owned' && bookb.isbn == booka.isbn %>
+            <% @books.each do |bookc| %>
+              <% if bookc.user_id == bookb.user_id && bookc.bookstatus == 'wanted' %>
+                <% @books.each do |bookd| %>
+                  <% if bookd.bookstatus == 'owned' && bookd.isbn == bookc.isbn && bookd.user_id == @user.id%>
+                    <li>
+                      <bk1>
+                      <%= booka.title %>
+                      <%= booka.bookstatus %>
+                      <%= bookb.title %>
+                      <%= bookb.bookstatus %>
+                      </bk1>
+                      
+                      <bk2>
+                      <%= bookc.title %>
+                      <%= bookc.bookstatus %>
+                      <%= bookd.title %>
+                      <%= bookd.bookstatus %>
+                      </bk2>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+</div>
+<% else %>
+<%= image_tag("TEXTCHANGE.png", :class => "header_img") %>
+
+<div class="center jumbotron">
+  
+  <h3>
+    Swap textbooks for free
+  </h3>
+  
+  <hand>
+    <%= image_tag"handShake.png"%>
+  </hand>
+
+  <h2>
+    A place to borrow and lend text books, to save you money and recycle books!
+    Get in contact with people who have a book you need this semester, hopefully you've got what they want!
+  </h2>
+  
+  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+  
+
+  
+</div>
+<% end %>

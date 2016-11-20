@@ -1,0 +1,10 @@
+<%= form_for(@book) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :isbn, placeholder: "enter isbn" %>
+    <%= f.text_field :title, placeholder: "enter title" %>
+    <%= f.text_field :author, placeholder: "enter author name" %>
+    <%= f.select :bookstatus, ['wanted', 'owned'] %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,35 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$gray-medium-light: #eaeaea;
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+#addbook {
+    float: right;
+}
+
+.user_info {
+    // margin-top: 5em;
+    // padding-top: 0;
+}
+
+.col-md-8 {
+    // float: left;
+    // padding: 10px;
+}
+
+.col-md-9 {
+    // float: right;
+    // padding: 10px;
+}
+
+.addBookButton {
+
+}

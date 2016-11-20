@@ -1,0 +1,31 @@
+<% provide(:title, @user.name) %>
+<%= image_tag("TEXTCHANGE.png", :class => "header_img") %>
+<div class="center jumbotron">
+
+    <div id = "ProfileInfo">
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </div>
+      
+  <div id="OwnedBooks">
+        Owned Books 
+      <ol class="books">
+        <%= render @booksOwned %>
+      </ol>
+      <%= will_paginate @booksOwned %>
+  </div>
+  
+  <div id = "WantedBooks">
+        Wanted Books 
+      <ol class="books">
+        <%= render @booksWanted%>
+      </ol>
+      <%= will_paginate @booksWanted %>
+  </div>
+  
+    <div id="addBookButton">
+      <%= link_to "Add book", addbook_path, class: "btn btn-lg btn-primary" %>
+    </div>
+  
+  </div>
+</div>

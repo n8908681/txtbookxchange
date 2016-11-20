@@ -1,0 +1,5 @@
+<li id="book-<%= book.id %>">
+  <span class="title"><%= book.title %>, </span>
+  <span class="Author"><%= book.author %></span>
+  <%= link_to "delete", book, method: :delete, data: { confirm: "You sure?" } %>
+</li>
